@@ -26,6 +26,11 @@ module.exports = function(environment) {
 
   if (environment === 'development') {
     ENV.APP.Host = 'http://localhost:4000';
+
+    ENV['ember-cli-mirage'] = {
+      enabled: false
+    };
+
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -34,6 +39,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
+    ENV.APP.Host = 'http://localhost:4000';
     // Testem prefers this...
     ENV.locationType = 'none';
 

@@ -1,8 +1,10 @@
-{{#each model as |article|}}
-  <div>
-    {{article.title}}
-    {{article.author}}
-    {{article.description}}
-    <img src={{article.urlToImage}} alt="">
-  </div>
-{{/each}}
+<ul>
+  {{#each model as |article|}}
+    <li>
+      <span class="title">{{article.title}}</span>
+      <span class="author">{{article.author}}</span>
+      <span class="description">{{article.description}}</span>
+      <img src={{article.urlToImage}} alt={{article.title}}>
+    </li>
+  {{/each}}
+</ul>
