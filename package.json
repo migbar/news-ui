@@ -31,13 +31,15 @@
     "ember-cli-qunit": "^4.0.0",
     "ember-cli-shims": "^1.1.0",
     "ember-cli-sri": "^2.1.0",
+    "ember-cli-tachyons-shim": "^4.7.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-data": "^2.15.0",
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.0.0",
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.15.0",
-    "loader.js": "^4.2.3"
+    "loader.js": "^4.2.3",
+    "tachyons": "^4.7.0"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"

@@ -9,9 +9,9 @@ test("I can view the list of articles", function(assert) {
   visit('/latest');
 
   andThen(() => {
-    assert.equal(find('li').length, 3);
-    assert.equal(find('li:first > .title').text().trim(), articles[0].title);
-    assert.equal(find('li:first > .description').text().trim(), articles[0].description);
-    assert.equal(find('li:first > img').attr('src'), articles[0].urlToImage);
+    assert.equal(find('article').length, articles.length);
+    assert.equal(find('article:first .t-title').text().trim(), articles[0].title);
+    assert.equal(find('article:first .t-description').text().trim(), articles[0].description);
+    assert.equal(find('article:first img').attr('src'), articles[0].urlToImage);
   });
 });
