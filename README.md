@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/migbar/news-ui.svg?branch=master)](https://travis-ci.org/migbar/news-ui)
+
 # news-ui
 
 Ember UI for news-api
