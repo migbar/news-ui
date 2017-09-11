@@ -1,0 +1,8 @@
+{{#each model as |article|}}
+  <div>
+    {{article.title}}
+    {{article.author}}
+    {{article.description}}
+    <img src={{article.urlToImage}} alt="">
+  </div>
+{{/each}}

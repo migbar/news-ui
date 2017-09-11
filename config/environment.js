@@ -25,6 +25,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    ENV.APP.Host = 'http://localhost:4000';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -44,7 +45,16 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.APP.Host = 'https://hidden-beyond-75537.herokuapp.com';
+  }
 
+  ENV.contentSecurityPolicy = {
+    // Deny everything by default
+    'default-src': "'none'",
+
+    // Then allow as follows:
+    'connect-src': ["'self'", "http://localhost:4000"],
+    'img-src': "*"
   }
 
   return ENV;
