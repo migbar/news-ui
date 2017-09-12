@@ -6,7 +6,8 @@ module.exports = function(environment) {
     modulePrefix: 'news-ui',
     environment,
     rootURL: '/',
-    locationType: 'auto',
+    // locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
