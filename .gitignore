@@ -17,6 +17,10 @@ npm-debug.log*
 yarn-error.log
 testem.log
 .DS_Store
+.env
+.env.deploy.test
+.env.deploy.qa
+.env.deploy.production
 
 # ember-try
 .node_modules.ember-try/
