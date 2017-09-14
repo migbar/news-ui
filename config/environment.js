@@ -26,7 +26,8 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    ENV.APP.Host = 'http://localhost:4000';
+    // ENV.APP.Host = 'http://localhost:4000';
+    ENV.APP.Host = 'https://newschips.herokuapp.com';
 
     ENV['ember-cli-mirage'] = {
       enabled: false
@@ -60,7 +61,7 @@ module.exports = function(environment) {
     'default-src': "'none'",
 
     // Then allow as follows:
-    'connect-src': ["'self'", "http://localhost:4000"],
+    'connect-src': ["'self'", "http://localhost:4000", "https://newschips.herokuapp.com/api/v1/articles"],
     'img-src': "*"
   }
 
