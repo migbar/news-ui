@@ -52,7 +52,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.Host = 'https://hidden-beyond-75537.herokuapp.com';
+    ENV.APP.Host = 'https://newschips.herokuapp.com';
   }
 
   ENV.contentSecurityPolicy = {
