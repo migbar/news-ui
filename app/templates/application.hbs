@@ -1,10 +1,13 @@
-<h1>News UI Application Template</h1>
-
-{{#link-to 'latest'}}
-  See Latest news
-{{/link-to}}
-
-<br>
-...............................
+<nav class="db dt-l w-100 border-box pa3 ph5-l">
+  <a class="db dtc-l v-mid mid-gray link dim w-100 w-25-l tc tl-l mb2 mb0-l" href="#" title="Home">
+    <img src="/images/news-icon.png" class="dib w2 h2" alt="Site Name">
+  </a>
+  <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+    {{#link-to 'latest' class="link dim dark-gray f6 f5-l dib mr3 mr4-l"}}Latest{{/link-to}}
+    {{#link-to 'latest' class="link dim dark-gray f6 f5-l dib mr3 mr4-l"}}Trending{{/link-to}}
+    {{#link-to 'latest' class="link dim dark-gray f6 f5-l dib mr3 mr4-l"}}Popular{{/link-to}}
+    <a class="link dim dark-gray f6 f5-l dib" href="#" title="Contact">Contact</a>
+  </div>
+</nav>
 
 {{outlet}}

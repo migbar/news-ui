@@ -146,4 +146,25 @@
     .f5-l {
         font-size: 1rem;
     }
+
+    .dt-l {
+        display: table;
+    }
+
+    .dtc-l {
+        display: table-cell;
+    }
+
+    .w-25-l {
+        width: 25%;
+    }
+
+    .w-75-l {
+        width: 75%;
+    }
+
+    nav {
+      background: #f5f5f5;
+      border-bottom: 1px solid #d5d5d5;
+    }
 }
