@@ -1,7 +1,7 @@
 import { moduleFor, test } from 'ember-qunit';
 import ENV from "news-ui/config/environment";
 
-moduleFor('adapter:article', 'Unit | Adapter | article', {
+moduleFor('adapter:source', 'Unit | Adapter | source', {
   // Specify the other units that are required for this test.
   // needs: ['serializer:foo']
 });

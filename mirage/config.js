@@ -4,4 +4,7 @@ export default function() {
 
   this.get('/articles');
   this.get('/articles/:id');
+
+  this.get('/sources');
+  this.get('/sources/:id');  
 }
