@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   beforeModel() {
-    this.transitionTo('latest');
+    console.log('in replace');
+    this.replaceWith('latest');
   }
 });
