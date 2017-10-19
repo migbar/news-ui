@@ -11,7 +11,7 @@ test("I can view the list of articles", function(assert) {
   andThen(() => {
     assert.equal(find('article').length, articles.length);
     assert.equal(find('article:first .t-title').text().trim(), articles[0].title);
-    assert.equal(find('article:first .t-description').text().trim(), articles[0].description);
+    assert.equal(find('article:first .t-text').text().trim(), articles[0].text);
     assert.equal(find('article:first img').attr('src'), articles[0].urlToImage);
   });
 });

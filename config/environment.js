@@ -26,8 +26,8 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    // ENV.APP.Host = 'http://localhost:4000';
-    ENV.APP.Host = 'https://newschips.herokuapp.com';
+    ENV.APP.Host = 'http://localhost:4000';
+    // ENV.APP.Host = 'https://newschips.herokuapp.com';
 
     ENV['ember-cli-mirage'] = {
       enabled: false

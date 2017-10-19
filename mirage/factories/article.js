@@ -10,8 +10,8 @@ export default Factory.extend({
     return `Author ${i}`;
   },
 
-  description(i) {
-    return `Description ${i}`;
+  text(i) {
+    return `Text ${i}`;
   },
 
   url() {

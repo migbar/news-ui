@@ -1,3 +1,23 @@
+.header {
+  height: 80px;
+}
+
+nav > a.active {
+  background: #f5f5f5;
+  color: #444;
+  font-weight: normal;
+}
+
+nav > a:focus {
+  outline: 0;
+}
+
+.content {
+  margin-top: 90px;
+  height: 850px;
+  overflow:auto;
+}
+
 /**********************/
 
 .mtn5 {
@@ -154,36 +174,47 @@
     .mb0-ns {
         margin-bottom: 0;
     }
+
 }
 
 @media screen and (min-width: 60em) {
-    .ph0-l {
-        padding-left: 0;
-        padding-right: 0;
-    }
+  .header {
+    height: 50px;
+  }
 
-    .f5-l {
-        font-size: 1rem;
-    }
+  .content {
+    margin-top: 60px;
+    height: 850px;
+    overflow:auto;
+  }
 
-    .dt-l {
-        display: table;
-    }
+  .ph0-l {
+      padding-left: 0;
+      padding-right: 0;
+  }
 
-    .dtc-l {
-        display: table-cell;
-    }
+  .f5-l {
+      font-size: 1rem;
+  }
 
-    .w-25-l {
-        width: 25%;
-    }
+  .dt-l {
+      display: table;
+  }
 
-    .w-75-l {
-        width: 75%;
-    }
+  .dtc-l {
+      display: table-cell;
+  }
 
-    nav {
-      background: #f5f5f5;
-      border-bottom: 1px solid #d5d5d5;
-    }
+  .w-25-l {
+      width: 25%;
+  }
+
+  .w-75-l {
+      width: 75%;
+  }
+
+  nav {
+    background: #f5f5f5;
+    border-bottom: 1px solid #d5d5d5;
+  }
 }

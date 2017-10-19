@@ -22,7 +22,7 @@ test('it renders the list of articles passed in', function(assert) {
 
   assert.equal(this.$('article').length, articles.length);
   assert.equal(this.$('article:first .t-title').text().trim(), articles[0].title);
-  assert.equal(this.$('article:first .t-description').text().trim(), articles[0].description);
+  assert.equal(this.$('article:first .t-text').text().trim(), articles[0].description);
   assert.equal(this.$('article:first img').attr('src'), articles[0].urlToImage);
 
 });
