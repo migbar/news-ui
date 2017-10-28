@@ -20,18 +20,20 @@ module.exports = function(environment) {
     },
 
     APP: {
+      webhoseApiKey: null
       // Here you can pass flags/options to your application instance
       // when it is created
     }
   };
-
   if (environment === 'development') {
     ENV.APP.Host = 'http://localhost:4000';
     // ENV.APP.Host = 'https://newschips.herokuapp.com';
 
     ENV['ember-cli-mirage'] = {
-      enabled: false
+      enabled: true
     };
+
+    ENV.APP.webhoseApiKey = process.env.WEBHOSE_IO_API_KEY;
 
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -61,7 +63,7 @@ module.exports = function(environment) {
     'default-src': "'none'",
 
     // Then allow as follows:
-    'connect-src': ["'self'", "http://localhost:4000", "https://newschips.herokuapp.com/api/v1/articles"],
+    'connect-src': ["'self'", "http://localhost:4000", "https://newschips.herokuapp.com/api/v1/articles", "http://webhose.io"],
     'img-src': "*"
   }
 

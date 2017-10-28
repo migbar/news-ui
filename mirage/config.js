@@ -1,10 +1,9 @@
+
 export default function() {
-  this.urlPrefix = 'http://localhost:4000';
-  this.namespace = 'api/v1';
+  this.urlPrefix = 'http://webhose.io';
 
-  this.get('/articles');
-  this.get('/articles/:id');
+  this.get('/filterWebContent', (schema) => {
+    return schema.posts.all();
+  });
 
-  this.get('/sources');
-  this.get('/sources/:id');  
 }
