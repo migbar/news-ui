@@ -1,24 +1,25 @@
 import { moduleForComponent, test } from 'ember-qunit';
+import { startMirage } from 'news-ui/initializers/ember-cli-mirage';
 import hbs from 'htmlbars-inline-precompile';
 
 moduleForComponent('article-tile', 'Integration | Component | article tile', {
-  integration: true
+  integration: true,
+  beforeEach() {
+    this.server = startMirage();
+  },
+  afterEach() {
+    this.server.shutdown();
+  }
 });
 
 test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  let post = server.create('post');
 
-  this.render(hbs`{{article-tile}}`);
+  this.set('article', post)
+  this.render(hbs`{{article-tile article=article}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#article-tile}}
-      template block text
-    {{/article-tile}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('.t-title').text().trim(), post.title);
+  assert.equal(this.$('.t-author').text().trim(), `By ${post.author}`);
+  assert.equal(this.$('.t-text').text().trim(), post.text);
+  assert.equal(this.$('img').attr('src'), post.thread.mainImage);
 });
