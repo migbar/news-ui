@@ -20,15 +20,15 @@ export default Factory.extend({
     return faker.internet.url();
   },
 
-  author(i) {
+  author() {
     return faker.name.findName();
   },
 
-  text(i) {
+  text() {
     return faker.lorem.sentences(10);
   },
 
-  title(i) {
+  title() {
     return faker.lorem.sentence();
   },
 

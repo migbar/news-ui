@@ -38,12 +38,12 @@ export default Factory.extend({
     return '2017-10-25T23:50:00.000+03:00';
   },
 
-  siteType(i) {
+  siteType() {
     let idx = faker.random.number(2)
     return ['blog', 'news', 'forum'][idx];
   },
 
-  country(i) {
+  country() {
     return faker.address.country();
   },
 
