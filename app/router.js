@@ -8,7 +8,6 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('latest');
-  this.route('sources');
 });
 
 export default Router;
