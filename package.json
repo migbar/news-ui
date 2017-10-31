@@ -46,6 +46,9 @@
     "ember-fetch": "^3.4.3",
     "ember-load-initializers": "^1.0.0",
     "ember-resolver": "^4.0.0",
+    "ember-service-worker": "^0.6.9",
+    "ember-service-worker-asset-cache": "^0.6.2",
+    "ember-service-worker-cache-fallback": "^0.6.1",
     "ember-source": "~2.15.0",
     "loader.js": "^4.2.3",
     "tachyons": "^4.7.0"
