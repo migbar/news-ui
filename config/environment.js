@@ -20,7 +20,7 @@ module.exports = function(environment) {
     },
 
     APP: {
-      webhoseApiKey: null
+      webhoseApiKey: process.env.WEBHOSE_IO_API_KEY
       // Here you can pass flags/options to your application instance
       // when it is created
     }
@@ -30,10 +30,10 @@ module.exports = function(environment) {
     // ENV.APP.Host = 'https://newschips.herokuapp.com';
 
     ENV['ember-cli-mirage'] = {
-      enabled: true
+      enabled: false
     };
 
-    ENV.APP.webhoseApiKey = process.env.WEBHOSE_IO_API_KEY;
+    // ENV.APP.webhoseApiKey = process.env.WEBHOSE_IO_API_KEY;
 
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
