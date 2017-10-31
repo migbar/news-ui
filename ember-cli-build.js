@@ -5,16 +5,23 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
+
+    'ember-service-worker': {
+      versionStrategy: 'every-build'
+    },
+
     'asset-cache': {
       include: [
         'assets/**/*',
         'images/*'
       ]
     },
+
     'esw-cache-fallback': {
       patterns: [ 'http://webhose.io/filterWebContent(.+)' ],
       version: '1' // Changing the version will bust the cache
     }
+    
   });
 
   // Use `app.import` to add additional libraries to the generated
