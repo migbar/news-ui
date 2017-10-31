@@ -20,20 +20,17 @@ module.exports = function(environment) {
     },
 
     APP: {
-      webhoseApiKey: process.env.WEBHOSE_IO_API_KEY
+      webhoseApiKey: process.env.WEBHOSE_IO_API_KEY,
+      Host: 'http://webhose.io'
       // Here you can pass flags/options to your application instance
       // when it is created
     }
   };
   if (environment === 'development') {
-    ENV.APP.Host = 'http://localhost:4000';
-    // ENV.APP.Host = 'https://newschips.herokuapp.com';
 
     ENV['ember-cli-mirage'] = {
       enabled: false
     };
-
-    // ENV.APP.webhoseApiKey = process.env.WEBHOSE_IO_API_KEY;
 
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -43,7 +40,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
-    ENV.APP.Host = 'http://localhost:4000';
     // Testem prefers this...
     ENV.locationType = 'none';
 
@@ -55,7 +51,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.Host = 'https://newschips.herokuapp.com';
+
   }
 
   ENV.contentSecurityPolicy = {
@@ -63,7 +59,7 @@ module.exports = function(environment) {
     'default-src': "'none'",
 
     // Then allow as follows:
-    'connect-src': ["'self'", "http://localhost:4000", "https://newschips.herokuapp.com/api/v1/articles", "http://webhose.io"],
+    'connect-src': ["'self'", "http://webhose.io"],
     'img-src': "*"
   }
 
