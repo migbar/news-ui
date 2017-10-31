@@ -3,9 +3,7 @@ import ENV from 'news-ui/config/environment';
 
 export default Ember.Route.extend({
 
-  model() {
-    console.log('in model hook ENV: ', ENV);
-    
+  model() {    
     let params = {
       token: ENV.APP.webhoseApiKey,
       format: 'json',
