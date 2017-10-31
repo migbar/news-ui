@@ -7,11 +7,12 @@ module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     'asset-cache': {
       include: [
-        'assets/**/*'
+        'assets/**/*',
+        'images/*'
       ]
     },
     'esw-cache-fallback': {
-      patterns: [ '/' ],
+      patterns: [ 'http://webhose.io/filterWebContent(.+)' ],
       version: '1' // Changing the version will bust the cache
     }
   });
