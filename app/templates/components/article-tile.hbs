@@ -18,8 +18,8 @@
           <p class="f6 f5-l lh-copy t-text">
             {{article.text}}
           </p>
-          <div class="t-toggle-text" onclick={{action toggleText}}>
-            ... show less
+          <div class="f7 fr t-toggle-text gold pointer bg-animate bg-white hover-bg-gold black w-30-ns pa1-ns tc-ns hover-white" onclick={{action toggleText}}>
+            Show Less {{fa-icon 'chevron-circle-up'}}
           </div>
 
         {{else}}
@@ -27,8 +27,8 @@
           <p class="f6 f5-l lh-copy t-truncated-text">
             {{truncatedText}}
           </p>
-          <div class="t-toggle-text" onclick={{action toggleText}}>
-            show more ...
+          <div class="f7 fr t-toggle-text gold pointer bg-animate bg-white hover-bg-gold black w-30-ns pa1-ns tc-ns hover-white" onclick={{action toggleText}}>
+            Show More {{fa-icon 'chevron-circle-down'}}
           </div>
 
         {{/liquid-if}}
