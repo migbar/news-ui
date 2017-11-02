@@ -10,6 +10,6 @@ test("I can view the list of articles", async function(assert) {
 
   assert.equal(find('article').length, articles.length);
   assert.equal(find('article:first .t-title').text().trim(), articles[0].title);
-  assert.equal(find('article:first .t-text').text().trim(), articles[0].text);
+  assert.equal(find('article:first .t-truncated-text').text().trim(), articles[0].text.substring(0, 200));
   assert.equal(find('article:first img').attr('src'), articles[0].thread.mainImage);
 });

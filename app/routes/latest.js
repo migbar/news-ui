@@ -3,12 +3,12 @@ import ENV from 'news-ui/config/environment';
 
 export default Ember.Route.extend({
 
-  model() {    
+  model() {
     let params = {
       token: ENV.APP.webhoseApiKey,
       format: 'json',
       sort: 'crawled',
-      q: 'Food Trucks',
+      q: 'Hollywood',
       language: 'english'
     };
 
