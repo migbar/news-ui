@@ -41,7 +41,7 @@
     "ember-cli-sri": "^2.1.0",
     "ember-cli-tachyons-shim": "^4.8.1",
     "ember-cli-uglify": "^1.2.0",
-    "ember-concurrency": "^0.8.10",
+    "ember-concurrency": "^0.8.12",
     "ember-data": "^2.15.0",
     "ember-export-application-global": "^2.0.0",
     "ember-fetch": "^3.4.3",
@@ -54,6 +54,7 @@
     "ember-service-worker-cache-fallback": "^0.6.1",
     "ember-service-worker-index": "^0.6.3",
     "ember-source": "~2.15.0",
+    "ember-tether": "^1.0.0-beta.0",
     "liquid-fire": "^0.29.0",
     "loader.js": "^4.2.3",
     "tachyons": "^4.7.0"

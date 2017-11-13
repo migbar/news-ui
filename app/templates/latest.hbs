@@ -1,5 +1,12 @@
-<section class="mw7 mt7 mt5-ns center avenir content">
+{{#ember-tether
+  target='#action-nav'
+  targetAttachment='bottom left'
+  attachment='bottom right'}}
+  {{search-widget isSearching=isSearching search=search on-search=(perform updateSearch)}}
+{{/ember-tether}}
 
-  {{article-list articles=model}}
+<section class="mw7 mt7 mt5-ns center avenir min-vh-100">
+
+  {{article-list articles=latest isLoading=isLoading}}
 
 </section>

@@ -1,0 +1,16 @@
+<div class="search-box">
+  <div class="search-widget">
+    {{fa-icon 'search' class="gray"}}
+
+    <input
+      id="search"
+      type="search"
+      class="gray br4 pl4 fl bn"
+      value={{search}}
+      oninput={{action on-search value='target.value'}}/>
+
+    {{#if isSearching}}
+      {{fa-icon 'spinner' class="fa-pulse fa-fw white"}}
+    {{/if}}
+  </div>
+</div>

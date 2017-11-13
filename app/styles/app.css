@@ -6,3 +6,40 @@
 .link:focus {
   outline: 0;
 }
+
+.search-box{
+  margin: 0 auto;
+  width: 300px;
+}
+
+.search-box i{
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  margin-left: 10px;
+  margin-top: -8px;
+  /*z-index: 1;*/
+}
+
+.ember-tether {
+  z-index: 1;
+}
+
+.search-widget input#search:hover, .search-widget input#search:focus, .search-widget input#search:active{
+  outline:none;
+  background: #ffffff;
+}
+
+.search-widget input#search{
+  width: 200px;
+  height: 30px;
+  background: #EEA71C;
+  font-size: 10pt;
+  color: #262626;
+
+  -webkit-transition: background .35s ease;
+  -moz-transition: background .35s ease;
+  -ms-transition: background .35s ease;
+  -o-transition: background .35s ease;
+  transition: background .35s ease;
+}
