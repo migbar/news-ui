@@ -11,6 +11,7 @@ export default Ember.Controller.extend({
   isLoading: computed.readOnly('model.loadTask.isRunning'),
 
   _latest: [],
+
   latest: computed('model.loadTask.{isRunning,value}', '_latest', function() {
     if (this.get('isLoading')) {
       return this.get('_latest');
@@ -19,10 +20,9 @@ export default Ember.Controller.extend({
     }
   }),
 
-  updateSearch: task(function * (term) {
+  updateSearch: task(function*(term) {
     yield timeout(DEBOUNCE_MS);
 
     this.set('search', term);
   }).restartable()
-
-})
+});
