@@ -1,4 +1,4 @@
-import { Factory, faker, association } from 'ember-cli-mirage';
+import { Factory, faker, association, trait } from 'ember-cli-mirage';
 
 /**
   Still outstanding:
@@ -9,11 +9,24 @@ import { Factory, faker, association } from 'ember-cli-mirage';
 
 **/
 
+const AUTHORS = [
+  "James Joyce",
+  "Scott Fitzgerald",
+  "James Joyce",
+  "Vladimir Nabokov",
+  "Aldous Huxley",
+  "William Faulkner",
+  "Joseph Heller",
+  "Arthur Koestler",
+  "D.H. Lawrence",
+  "John Steinbeck"
+]
+
 export default Factory.extend({
   thread: association(),
 
   uuid() {
-    return  faker.random.uuid();
+    return faker.random.uuid();
   },
 
   url() {
@@ -21,7 +34,7 @@ export default Factory.extend({
   },
 
   author() {
-    return faker.name.findName();
+    return AUTHORS[Math.floor(Math.random() * AUTHORS.length)];
   },
 
   text() {
@@ -50,5 +63,15 @@ export default Factory.extend({
 
   rating() {
     return 4.5;
-  }
+  },
+
+  // traits
+  long: trait({
+    text: faker.lorem.sentences(30)
+  }),
+
+  short: trait({
+    text: faker.lorem.sentences(3)
+  })
+
 });
