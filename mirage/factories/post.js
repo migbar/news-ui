@@ -20,13 +20,23 @@ const AUTHORS = [
   "Arthur Koestler",
   "D.H. Lawrence",
   "John Steinbeck"
+],
+
+LANGUAGES = [
+  "English",
+  "French",
+  "Spanish"
 ]
 
+// "German",
+// "Hebrew",
+// "Japanese",
+// "Finish"
 export default Factory.extend({
   thread: association(),
 
-  uuid() {
-    return faker.random.uuid();
+  uuid(i) {
+    return `post-${i+1}`;
   },
 
   url() {
@@ -50,7 +60,7 @@ export default Factory.extend({
   },
 
   language() {
-    return 'english';
+    return LANGUAGES[Math.floor(Math.random() * LANGUAGES.length)];
   },
 
   published() {
@@ -62,7 +72,7 @@ export default Factory.extend({
   },
 
   rating() {
-    return 4.5;
+    return Math.floor(Math.random() * 9) + 1;
   },
 
   // traits

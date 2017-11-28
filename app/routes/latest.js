@@ -10,13 +10,13 @@ const requestParams = {
       };
 
 export default Ember.Route.extend({
-  queryParams: {
-    search: {
-      as: 's',
-      replace: true,
-      refreshModel: true
-    }
-  },
+  // queryParams: {
+  //   search: {
+  //     as: 's',
+  //     replace: true,
+  //     refreshModel: true
+  //   }
+  // },
 
   model(params) {
     return {

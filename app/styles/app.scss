@@ -1,0 +1,48 @@
+@import "pod-styles";
+
+.active {
+  color: white;
+  border-bottom: 4px solid white;
+}
+
+.link:focus {
+  outline: 0;
+}
+
+.search-box {
+  margin: 0 auto;
+  width: 300px;
+}
+
+.search-box i {
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  margin-left: 10px;
+  margin-top: -8px;
+}
+
+.ember-tether {
+  z-index: 1;
+}
+
+.search-widget input#search:hover,
+.search-widget input#search:focus,
+.search-widget input#search:active {
+  outline: none;
+  background: #ffffff;
+}
+
+.search-widget input#search {
+  width: 200px;
+  height: 30px;
+  background: #eea71c;
+  font-size: 10pt;
+  color: #262626;
+
+  -webkit-transition: background 0.35s ease;
+  -moz-transition: background 0.35s ease;
+  -ms-transition: background 0.35s ease;
+  -o-transition: background 0.35s ease;
+  transition: background 0.35s ease;
+}
