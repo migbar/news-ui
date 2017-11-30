@@ -7,12 +7,16 @@
   {{/link-to}}
 
   <div id="action-nav" class="db dtc-l v-mid w-100 w-50-ns w-50-m w-20-l tc tr-l">
-    {{#link-to 'index' class="link black f6 f5-l mr3 mr4-l pa2"}}Featured{{/link-to}}
+    {{#link-to 'dashboard' class="link black f6 f5-l mr3 mr4-l pa2"}}Dashboard{{/link-to}}
     {{#link-to 'latest' class="link black f6 f5-l mr3 mr4-l pa2"}}Latest{{/link-to}}
   </div>
 </nav>
 
-{{outlet}}
+<div class="content">
+  <section class="mw7 mt7 mt6-ns center avenir min-vh-100">
+    {{outlet}}
+  </section>
+</div>
 
 <footer class="pv4 ph3 ph5-m ph6-l mid-gray">
   <small class="f6 db tc">© 2017 <b class="ttu">Galar Systems, Inc</b>., (Powered by webhose.io)</small>

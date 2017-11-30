@@ -5,44 +5,41 @@
   {{search-widget isSearching=isSearching search=search on-search=(perform updateSearch)}}
 {{/ember-tether}}
 
+<div class="flex tc">
 
-<section class="mw7 mt7 mt6-ns center avenir min-vh-100">
-
-  <div class="flex tc">
-    <div class="flex-auto ph4">
-
-      {{bar-chart
-        data=authorData
-        selectedLabel=selectedAuthor
-        on-click=(action 'toggleBar' 'selectedAuthor')}}
-
-      <p class="f5 mt2 mb3">
-        Authors
-      </p>
-    </div>
-    <div class="flex-auto ph4">
-      {{bar-chart
-        data=languageData
-        color='green'
-        selectedLabel=selectedLanguage
-        on-click=(action 'toggleBar' 'selectedLanguage')}}
-
-      <p class="f5 mt2 mb3">
-        Languages
-      </p>
-    </div>
-    <div class="flex-auto ph4">
-      {{bar-chart
-        data=ratingsData
-        color='red'
-        selectedLabel=selectedRating
-        on-click=(action 'toggleBar' 'selectedRating')}}
-      <p class="f5 mt2 mb3">
-        Ratings
-      </p>
-    </div>
+  <div class="flex-auto ph4">
+    {{bar-chart
+      data=authorData
+      selectedLabel=selectedAuthor
+      on-click=(action 'toggleBar' 'selectedAuthor')}}
+    <p class="f5 mt2 mb3">
+      Authors
+    </p>
   </div>
 
-  {{article-list articles=articles isLoading=isLoading}}
+  <div class="flex-auto ph4">
+    {{bar-chart
+      data=languageData
+      color='green'
+      selectedLabel=selectedLanguage
+      on-click=(action 'toggleBar' 'selectedLanguage')}}
 
-</section>
+    <p class="f5 mt2 mb3">
+      Languages
+    </p>
+  </div>
+
+  <div class="flex-auto ph4">
+    {{bar-chart
+      data=ratingsData
+      color='red'
+      selectedLabel=selectedRating
+      on-click=(action 'toggleBar' 'selectedRating')}}
+    <p class="f5 mt2 mb3">
+      Ratings
+    </p>
+  </div>
+
+</div>
+
+{{article-list articles=articles isLoading=isLoading}}

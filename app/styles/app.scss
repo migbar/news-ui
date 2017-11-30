@@ -1,5 +1,7 @@
 @import "pod-styles";
-
+.content {
+  min-height: 800px;
+}
 .active {
   color: white;
   border-bottom: 4px solid white;
