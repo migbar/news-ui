@@ -30,10 +30,11 @@ export default Ember.Controller.extend({
     let selectedAuthor = this.get('selectedAuthor');
     let selectedLanguage = this.get('selectedLanguage');
     let selectedRating = this.get('selectedRating');
+
     return this.get('latest')
       .filter(article => selectedAuthor ? article.get('author') === selectedAuthor : true)
       .filter(article => selectedLanguage ? article.get('language') === selectedLanguage : true)
-      .filter(article => selectedRating ? article.get('id') === selectedRating : true);
+      .filter(article => selectedRating ? article.get('rating') === ''+selectedRating : true);
   }),
 
   latestByAuthor: groupBy('articles', 'author'),
@@ -58,13 +59,17 @@ export default Ember.Controller.extend({
     });
   }),
 
-  ratingsData: computed('articles.[]', function() {
-    return this.get('articles').map(post => {
-      return {
-        label: post.id,
-        value: post.get('rating')
-      }
-    })
+  latestByRating: groupBy('articles', 'rating'),
+  ratingsData: computed('latestByRating.[]', function() {
+    let groups = this.get('latestByRating');
+    let result = [];
+    for (var i = 0; i < 10; i++) {
+      result[i] = { label: i, value: 0 };
+    }
+    groups.forEach((group, i) => {
+      result[group.value]['value'] = group.items.length;
+    });
+    return result;
   }),
 
   updateSearch: task(function*(term) {

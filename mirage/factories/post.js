@@ -25,13 +25,13 @@ const AUTHORS = [
 LANGUAGES = [
   "English",
   "French",
-  "Spanish"
+  "Spanish",
+  "German",
+  "Hebrew",
+  "Japanese",
+  "Finish"
 ]
 
-// "German",
-// "Hebrew",
-// "Japanese",
-// "Finish"
 export default Factory.extend({
   thread: association(),
 
@@ -72,7 +72,7 @@ export default Factory.extend({
   },
 
   rating() {
-    return Math.floor(Math.random() * 9) + 1;
+    return Math.floor(Math.random() * 5) + 1;
   },
 
   // traits
