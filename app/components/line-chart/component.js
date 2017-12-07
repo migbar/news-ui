@@ -138,15 +138,6 @@ export default Ember.Component.extend({
         .data([group.data])
         .style('stroke', group.color)
         .attr('fill', 'none');
-
-      svg.selectAll("circle")
-          .data([group.data])
-        .enter()
-          .append("circle")
-          .attr("cx", function(d, i) { return x(now - (limit - 1 - i) * duration) })
-          .attr("cy", function(d, i) { return y(d[i]) })
-          .attr('fill', group.color)
-          .attr("r", 50);
     }
 
     function tick() {
