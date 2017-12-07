@@ -30,17 +30,17 @@ export default Ember.Component.extend({
       // events come in at random intervals
       let interval = (Math.random() * 350) + 150;
       this.set('interval', interval);
-
       yield timeout(interval);
-
-      let point = {
-        x: this.get('globalX'),
-        y: ((Math.random() * 70) + (Math.random() * 25) >> 0)  // y is a random value between 25 and 75
-      }
-
-      this.get('data').push(point);
+      this.get('data').push(this.newPoint());
     }
   }),
+
+  newPoint() {
+    return {
+      x: this.get('globalX'),
+      y: ((Math.random() * 70) + (Math.random() * 25) >> 0)  // y is a random value between 25 and 75
+    };
+  },
 
   didInsertElement() {
     this._super(...arguments);
