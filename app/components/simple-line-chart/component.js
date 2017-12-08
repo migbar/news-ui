@@ -14,10 +14,13 @@ import 'd3-transition';
 export default Ember.Component.extend({
   width: 500,
   height: 200,
-  globalX: 0,
+
+  max_interval: 500,
+  step: 1,
+  maxNumberOfDataPoints: 100,
+  counter: 0,
+
   data: [],
-  max: 200,
-  step: 2,
 
   svg: null,
   xScale: null,
@@ -27,24 +30,27 @@ export default Ember.Component.extend({
 
   dataGeneratorTask: task(function * () {
     while (true) {
-      // events come in at random intervals
-      let interval = (Math.random() * 350) + 150;
-      this.set('interval', interval);
-      yield timeout(interval);
+      let currentInterval = (Math.random() * this.get('max_interval'));
+      this.set('currentInterval', currentInterval);
+      yield timeout(currentInterval);
       this.get('data').push(this.newPoint());
+
+      if (this.get('data').length > this.get('maxNumberOfDataPoints')) {
+        this.get('data').shift();
+      }
+
     }
   }),
 
   newPoint() {
     return {
-      x: this.get('globalX'),
+      x: this.get('counter'),
       y: ((Math.random() * 70) + (Math.random() * 25) >> 0)  // y is a random value between 25 and 75
     };
   },
 
   didInsertElement() {
     this._super(...arguments);
-
 
     this.set('svg', select(this.$('svg')[0])
                         .attr('width', this.get('width'))
@@ -62,7 +68,10 @@ export default Ember.Component.extend({
                         .attr('fill', 'none'));
 
     this.set('smoothLine', line().curve(curveMonotoneX)
-                        .x(d => this.get('xScale')( d.x )+10)
+                        .x(d => {
+                          let offset = Math.max(this.get('step') * 10, 10);
+                          return this.get('xScale')( d.x ) + offset;
+                        })
                         .y(d => this.get('yScale')( d.y )));
 
     this.get('dataGeneratorTask').perform();
@@ -70,26 +79,24 @@ export default Ember.Component.extend({
   },
 
   renderChart() {
-    this.set('globalX', this.get('globalX') + this.get('step'));
+    this.set('counter', this.get('counter') + this.get('step'));
 
-    this.get('xScale').domain([ this.get('globalX') - (this.get('max') - this.get('step')), this.get('globalX') ]);
+    this.get('xScale').domain([ this.get('counter') - (this.get('maxNumberOfDataPoints') - this.get('step')), this.get('counter') ]);
 
     // Draw new line
     this.get('path').datum(this.get('data')).attr('d', this.get('smoothLine'));
+
+    let pointsPainted = this.get('counter') - this.get('maxNumberOfDataPoints');
+    let translateDistance = this.get('xScale')(pointsPainted);
 
     // Shift the chart left
     this.get('path')
       .attr('transform', null)
       .transition()
-      .duration(this.get('interval'))
+      .duration(this.get('currentInterval'))
       .ease(easeLinear)
-      .attr('transform', 'translate(' + this.get('xScale')(this.get('globalX') - this.get('max')) + ')')
+      .attr('transform', 'translate(' + translateDistance + ')')
       .on('end', this.renderChart.bind(this));
-
-    // Remove old this.get('data') if more points than max
-    if (this.get('data').length > this.get('max')) {
-      this.get('data').shift();
-    }
   }
 
 });
