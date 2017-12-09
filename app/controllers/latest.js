@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { task, timeout, restartable } from 'ember-concurrency';
+import { task, timeout } from 'ember-concurrency';
 import groupBy from 'ember-group-by';
 
 const { computed } = Ember;
@@ -66,14 +66,14 @@ export default Ember.Controller.extend({
     for (var i = 0; i < 10; i++) {
       result[i] = { label: i, value: 0 };
     }
-    groups.forEach((group, i) => {
+    groups.forEach((group) => {
       result[group.value]['value'] = group.items.length;
     });
     return result;
   }),
 
   updateSearch: task(function*(term) {
-    yield timeout(DEBOUNCE_MS);
+    yield timeout(DEBOUNCE_MS);    
 
     this.set('search', term);
   }).restartable(),

@@ -3,10 +3,10 @@ import Ember from 'ember';
 import { task, timeout } from 'ember-concurrency';
 
 import { select } from 'd3-selection';
-import { range } from 'd3-array';
-import { scaleLinear, scaleTime } from 'd3-scale';
+// import { range } from 'd3-array';
+import { scaleLinear /*scaleTime*/ } from 'd3-scale';
 import { curveMonotoneX, line } from 'd3-shape';
-import { axisBottom, axisLeft } from 'd3-axis';
+// import { axisBottom, axisLeft } from 'd3-axis';
 import { easeLinear } from 'd3-ease';
 // import 'd3-ease';
 import 'd3-transition';

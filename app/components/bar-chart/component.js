@@ -26,7 +26,7 @@ export default Ember.Component.extend({
 
     return select(this.$('svg')[0])
       .selectAll('rect')
-      .filter(data => data.label === this.get('highlightedLabel'))
+      .filter(data => data.label === highlightedLabel)
       .node();
   }),
 

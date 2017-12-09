@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import ENV from 'news-ui/config/environment';
-import { task, timeout } from 'ember-concurrency';
+import { task } from 'ember-concurrency';
 
 const requestParams = {
         token: ENV.APP.webhoseApiKey,
@@ -27,7 +27,7 @@ export default Ember.Route.extend({
   loadTask: task(function * (qp) {
     let fullParams = Object.assign(requestParams, { q: qp.search });
 
-    return this.store.query('post', fullParams);
+    return yield this.store.query('post', fullParams);
   }),
 
   setupController(controller) {

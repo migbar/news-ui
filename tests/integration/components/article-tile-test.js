@@ -22,7 +22,7 @@ test('it renders the article tile without the expand button if article has a sho
   this.render(hbs`{{article-tile article=article}}`);
 
   assert.equal(this.$('.t-title').text().trim(), article.title);
-  assert.equal(this.$('.t-author').text().trim(), `By ${article.author}`);
+  assert.equal(this.$('.t-author').text().trim(), `By ${article.author} (${article.language}) ${article.id}`);
   assert.equal(this.$('.t-text').text().trim(), `${article.text}`);
   assert.equal(this.$('.t-toggle-text').length, 0);
   assert.equal(this.$('img').attr('src'), article.thread.mainImage);
@@ -44,7 +44,7 @@ test('it renders the article tile with the expand button and the truncated text 
   this.render(hbs`{{article-tile article=article}}`);
 
   assert.equal(this.$('.t-title').text().trim(), article.title);
-  assert.equal(this.$('.t-author').text().trim(), `By ${article.author}`);
+  assert.equal(this.$('.t-author').text().trim(), `By ${article.author} (${article.language}) ${article.id}`);
   assert.equal(this.$('.t-truncated-text').text().trim(), `${article.text}`.substring(0,200));
   assert.equal(this.$('.t-toggle-text').length, 1);
   assert.equal(this.$('img').attr('src'), article.thread.mainImage);
