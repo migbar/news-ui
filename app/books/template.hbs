@@ -1,0 +1,12 @@
+<ul class="list">
+  {{#each model as |book index|}}
+    <li class="pa3 bb b--light-gray">
+      <div data-test-title={{index}}>
+        {{book.title}}
+      </div>
+      <div class="silver" data-test-description={{index}}>
+        {{book.description}}
+      </div>
+    </li>
+  {{/each}}
+</ul>
