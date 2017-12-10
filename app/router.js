@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('latest');
   this.route('dashboard');
   this.route('books');
+  this.route('authors');
 });
 
 export default Router;

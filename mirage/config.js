@@ -7,8 +7,11 @@ export default function() {
   });
 
   this.get('/books', schema => {
-    console.log('in books');
     return schema.books.all();
+  });
+
+  this.get('/authors', schema => {
+    return schema.authors.all();
   });
 
 }

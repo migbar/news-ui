@@ -1,0 +1,33 @@
+<ul class="list">
+  {{#each model as |author index|}}
+
+   <li data-test-author-name={{index}} class="pa3 bb b--light-gray hide-child">
+   {{author.name}}
+    <button data-test-autor-edit-button={{index}} class="child silver fr" onclick={{action 'editAuthor' author}}>{{fa-icon 'pencil' }}</button>
+   </li>
+
+  {{/each}}
+</ul>
+
+{{#if isEditing}}
+
+  {{#modal-dialog
+      onClose="toggleModal"
+      targetAttachment="center"
+      translucentOverlay=true}}
+
+    <h2 class="bb b--light-gray">Edit Author</h2>
+
+    <form class="pa4">
+      <label class="pa2" for="name">Name:</label>
+      <input data-test-name class="pa2" type="text" name="name" oninput={{action (mut authorState.name) value="target.value"}} value={{authorState.name}}>
+    </form>
+
+    <div class="pa3 flex bt b--light-gray">
+      <button data-test-ok-button type="button" name="button" onclick={{action 'commitChange'}}>OK</button>
+      <button data-test-cancel-button type="button" name="button" onclick={{action 'cancelEdit'}}>Cancel</button>
+    </div>
+
+  {{/modal-dialog}}
+
+{{/if}}

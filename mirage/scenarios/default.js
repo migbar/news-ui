@@ -5,4 +5,5 @@ export default function(server) {
   */
   server.createList('post', 30, 'long');
   server.createList('book', 10);
+  server.createList('author', 10);
 }

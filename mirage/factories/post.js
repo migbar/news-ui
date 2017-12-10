@@ -20,9 +20,9 @@ const AUTHORS = [
   "Arthur Koestler",
   "D.H. Lawrence",
   "John Steinbeck"
-],
+];
 
-LANGUAGES = [
+const LANGUAGES = [
   "English",
   "French",
   "Spanish",
@@ -30,7 +30,7 @@ LANGUAGES = [
   "Hebrew",
   "Japanese",
   "Finish"
-]
+];
 
 export default Factory.extend({
   thread: association(),
