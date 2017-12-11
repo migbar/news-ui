@@ -3,7 +3,7 @@
 
    <li data-test-author-name={{index}} class="pa3 bb b--light-gray hide-child">
    {{author.name}}
-    <button data-test-autor-edit-button={{index}} class="child silver fr" onclick={{action 'editAuthor' author}}>{{fa-icon 'pencil' }}</button>
+    <button data-test-autor-edit-button={{index}} class="child f6 link dim ph3 pv2 mb2 dib white bg-gray fr" onclick={{action 'editAuthor' author}}>{{fa-icon 'pencil' }}</button>
    </li>
 
   {{/each}}
@@ -18,14 +18,14 @@
 
     <h2 class="bb b--light-gray">Edit Author</h2>
 
-    <form class="pa4">
+    <form class="pa4 bb b--light-gray">
       <label class="pa2" for="name">Name:</label>
       <input data-test-name class="pa2" type="text" name="name" oninput={{action (mut authorState.name) value="target.value"}} value={{authorState.name}}>
     </form>
 
-    <div class="pa3 flex bt b--light-gray">
-      <button data-test-ok-button type="button" name="button" onclick={{action 'commitChange'}}>OK</button>
-      <button data-test-cancel-button type="button" name="button" onclick={{action 'cancelEdit'}}>Cancel</button>
+    <div class="pa3 flex fr">
+      <button data-test-ok-button class="mr3 f6 link dim ph3 pv2 mb2 dib white bg-gray" type="button" name="button" onclick={{action 'commitChange'}}>OK</button>
+      <button data-test-cancel-button class="mr3 f6 link dim ph3 pv2 mb2 dib gray bg-light-gray" type="button" name="button" onclick={{action 'cancelEdit'}}>Cancel</button>
     </div>
 
   {{/modal-dialog}}

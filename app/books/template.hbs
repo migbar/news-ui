@@ -1,12 +1,33 @@
-<ul class="list">
-  {{#each model as |book index|}}
-    <li class="pa3 bb b--light-gray">
-      <div data-test-title={{index}}>
-        {{book.title}}
-      </div>
-      <div class="silver" data-test-description={{index}}>
-        {{book.description}}
-      </div>
-    </li>
-  {{/each}}
-</ul>
+<div class="flex">
+
+  <ul class="flex-auto list">
+
+    {{#each model as |book index|}}
+
+      <li data-test-book={{index}} class="pa3 bb b--light-gray">
+
+        {{#link-to 'books.book-details' book.id class="link"}}
+
+          {{draft-indicator book=book}}
+
+          <div class="b" data-test-title={{index}}>
+            {{book.title}}
+          </div>
+
+        {{/link-to}}
+
+        <div class="f6 silver" data-test-description={{index}}>
+          {{book.description}}
+        </div>
+
+      </li>
+
+    {{/each}}
+
+  </ul>
+
+  <div class="flex-auto">
+    {{outlet}}
+  </div>
+
+</div>

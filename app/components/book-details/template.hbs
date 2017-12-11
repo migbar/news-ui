@@ -1,0 +1,16 @@
+<h2>Book Details</h2>
+
+isEditing: {{data.isEditing}}
+
+<div class="book-form pa4 ba b--light-gray">
+  <label class="tr pa3 mb2" for="title">title:</label>
+  <input data-test-title-input name="title"type="text" oninput={{action (mut data.title) value="target.value"}} value={{data.title}} class="pa3 mb2">
+
+  <label class="tr pa3 mb2" for="description">description:</label>
+  <textarea data-test-description-input name="description" rows="8" oninput={{action (mut data.description) value="target.value"}} value={{data.description}} class="pa3 mb2"/>
+
+  <div></div>
+  <div class="bt b--light-gray pa3 fr">
+    <button data-test-book-ok-button class="mr3 f6 link dim ph3 pv2 mb2 dib white bg-gray" onclick={{action 'commit'}}>OK</button>
+  </div>
+</div>

@@ -1,17 +1,11 @@
 export default function() {
-
   this.urlPrefix = 'http://webhose.io';
 
-  this.get('/filterWebContent', schema => {
-    return schema.posts.all();
-  });
+  this.get('/filterWebContent', 'posts');
 
-  this.get('/books', schema => {
-    return schema.books.all();
-  });
+  this.get('/books');
+  this.get('/books/:id');
+  this.put('/books/:id');
 
-  this.get('/authors', schema => {
-    return schema.authors.all();
-  });
-
+  this.get('/authors');
 }
