@@ -1,24 +1,24 @@
 <div class="flex">
 
-  <ul class="flex-auto list">
+  <ul class="flex-auto list br b--light-gray">
 
     {{#each model as |book index|}}
 
-      <li data-test-book={{index}} class="pa3 bb b--light-gray">
+      <li data-test-book={{index}} class="pa3">
 
         {{#link-to 'books.book-details' book.id class="link"}}
 
           {{draft-indicator book=book}}
 
-          <div class="b" data-test-title={{index}}>
+          <p class="b" data-test-title={{index}}>
             {{book.title}}
-          </div>
+          </p>
 
         {{/link-to}}
 
-        <div class="f6 silver" data-test-description={{index}}>
+        <p class="f6 silver" data-test-description={{index}}>
           {{book.description}}
-        </div>
+        </p>
 
       </li>
 
