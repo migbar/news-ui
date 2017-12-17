@@ -1,0 +1,9 @@
+{
+  "name": "news-charts",
+  "dependencies": {
+    "ember-cli-htmlbars": "*"
+  },
+  "keywords": [
+    "ember-addon"
+  ]
+}
