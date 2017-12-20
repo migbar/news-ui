@@ -69,6 +69,7 @@
   },
   "ember-addon": {
     "paths": [
+      "lib/asset-pipeline-spy",
       "lib/news-charts",
       "lib/news-commander"
     ]

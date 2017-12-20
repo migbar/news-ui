@@ -2,11 +2,16 @@
 
 @import "ember-modal-dialog/ember-modal-structure";
 @import "ember-modal-dialog/ember-modal-appearance";
+body {
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+}
 
 .content {
-  min-height: 800px;
-  background: #fafbfc;
+  // background: #fafbfc;
 }
+
 .active {
   color: #408BC9;
   border-bottom: 4px solid white;
