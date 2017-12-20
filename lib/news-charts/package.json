@@ -1,6 +1,7 @@
 {
   "name": "news-charts",
   "dependencies": {
+    "ember-cli-babel": "*",
     "ember-cli-htmlbars": "*"
   },
   "keywords": [
