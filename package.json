@@ -20,6 +20,7 @@
     "ember-ajax": "^3.0.0",
     "ember-buffered-proxy": "^0.8.1",
     "ember-cli": "~2.17.1",
+    "ember-cli-accounting": "^2.0.2",
     "ember-cli-app-version": "^3.0.0",
     "ember-cli-babel": "^6.6.0",
     "ember-cli-content-security-policy": "^1.0.0",
@@ -31,6 +32,7 @@
     "ember-cli-deploy-revision-data": "^1.0.0",
     "ember-cli-deploy-s3": "^1.1.0",
     "ember-cli-deploy-s3-index": "^1.0.0",
+    "ember-cli-dotenv": "^2.0.0",
     "ember-cli-eslint": "^4.2.1",
     "ember-cli-fastboot": "^1.1.0",
     "ember-cli-htmlbars": "^2.0.1",
@@ -70,6 +72,7 @@
   "ember-addon": {
     "paths": [
       "lib/asset-pipeline-spy",
+      "lib/btc-wallet",
       "lib/news-charts",
       "lib/news-commander"
     ]

@@ -20,10 +20,11 @@ module.exports = function(environment) {
     },
 
     APP: {
+      WALLET_ADDRESS: process.env.WALLET_ADDRESS,
       webhoseApiKey: process.env.WEBHOSE_IO_API_KEY,
       Host: 'http://webhose.io'
-      // Here you can pass flags/options to your application instance
-      // when it is created
+        // Here you can pass flags/options to your application instance
+        // when it is created
     }
   };
   if (environment === 'development') {
@@ -59,7 +60,7 @@ module.exports = function(environment) {
     'default-src': "'none'",
 
     // Then allow as follows:
-    'connect-src': ["'self'", "http://webhose.io"],
+    'connect-src': ["'self'", "http://webhose.io", "https://api.blockcypher.com", "https://api.coindesk.com"],
     'img-src': "*"
   }
 

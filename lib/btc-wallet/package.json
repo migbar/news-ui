@@ -1,0 +1,11 @@
+{
+  "name": "btc-wallet",
+  "dependencies": {
+    "ember-cli-babel": "*",
+    "ember-cli-htmlbars": "*",
+    "ember-font-awesome": "^3.x"
+  },
+  "keywords": [
+    "ember-addon"
+  ]
+}
