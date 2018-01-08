@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
 import stateFor from 'ember-state-services/state-for';
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   authorState: stateFor('author-state', 'editingAuthor'),
 
   isEditing: false,

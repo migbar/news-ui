@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 import ENV from 'news-ui/config/environment';
 import { task } from 'ember-concurrency';
 
@@ -9,7 +9,7 @@ const requestParams = {
         language: 'english'
       };
 
-export default Ember.Route.extend({
+export default Route.extend({
   // queryParams: {
   //   search: {
   //     as: 's',

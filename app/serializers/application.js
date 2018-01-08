@@ -1,11 +1,11 @@
-import Ember from 'ember';
+import { underscore } from '@ember/string';
 import DS from 'ember-data';
 
 export default DS.RESTSerializer.extend({
   primaryKey: 'uuid',
 
   keyForAttribute(attr) {
-    return Ember.String.underscore(attr);
+    return underscore(attr);
   }
-  
+
 });

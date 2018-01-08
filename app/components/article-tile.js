@@ -1,9 +1,10 @@
-import Ember from 'ember';
-const { computed, computed: { alias } } = Ember;
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { alias } from '@ember/object/computed';
 
 const ARTICLE_MAX_DISPLAY_LENGTH = 200;
 
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: 'article',
   classNames: ['bb b--black-05'],
   mainImage: alias('article.thread.mainImage'),

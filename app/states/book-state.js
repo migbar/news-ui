@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Object from '@ember/object';
 
-const BookState = Ember.Object.extend({});
+const BookState = Object.extend({});
 
 BookState.reopenClass({
   initialState(instance) {

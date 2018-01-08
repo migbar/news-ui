@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import stateFor from 'ember-state-services/state-for';
 
-export default Ember.Component.extend({
+export default Component.extend({
 
   data: stateFor('book-state', 'book'),
 

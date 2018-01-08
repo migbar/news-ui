@@ -1,11 +1,11 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
+import { computed } from '@ember/object';
 import { task, timeout } from 'ember-concurrency';
 import groupBy from 'ember-group-by';
 
-const { computed } = Ember;
 const DEBOUNCE_MS = 500;
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   // queryParams: ['search'],
   // search: '',
 
@@ -15,8 +15,6 @@ export default Ember.Controller.extend({
   selectedLanguage: null,
   selectedRating: null,
   isLoading: computed.readOnly('model.loadTask.isRunning'),
-
-  _latest: [],
 
   latest: computed('model.loadTask.{isRunning,value}', '_latest', function() {
     if (this.get('isLoading')) {
@@ -73,11 +71,16 @@ export default Ember.Controller.extend({
   }),
 
   updateSearch: task(function*(term) {
-    yield timeout(DEBOUNCE_MS);    
+    yield timeout(DEBOUNCE_MS);
 
     this.set('search', term);
   }).restartable(),
 
+  init() {
+    this._super(...arguments);
+    this._latest = [];
+  },
+  
   actions: {
     toggleBar(property, label) {
       let newValue = this.get(property) === label ? null : label;
