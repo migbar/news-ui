@@ -1,15 +1,16 @@
 import { test } from 'qunit';
 import moduleForAcceptance from 'news-ui/tests/helpers/module-for-acceptance';
+import page from '../pages/latest-news';
 
 moduleForAcceptance('Acceptance | latest news');
 
 test("I can view the list of articles", async function(assert) {
   let articles = server.createList('post', 3);
 
-  await visit('/latest');
+  await page.visit();
 
-  assert.equal(find('article').length, articles.length);
-  assert.equal(find('article:first .t-title').text().trim(), articles[0].title);
-  assert.equal(find('article:first .t-truncated-text').text().trim(), articles[0].text.substring(0, 200).trim());
-  assert.equal(find('article:first img').attr('src'), articles[0].thread.mainImage);
+  assert.equal(page.articles().count, articles.length);
+  assert.equal(page.articles(0).title, articles[0].title);
+  assert.equal(page.articles(0).truncatedText, articles[0].text.substring(0, 200).trim());
+  assert.equal(page.articles(0).imageUrl, articles[0].thread.mainImage);
 });
