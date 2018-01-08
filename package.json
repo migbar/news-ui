@@ -62,6 +62,7 @@
     "ember-state-services": "^4.0.0",
     "ember-test-selectors": "^0.3.8",
     "ember-tether": "^1.0.0-beta.0",
+    "eslint-plugin-ember": "^5.0.3",
     "liquid-fire": "^0.29.0",
     "loader.js": "^4.2.3",
     "tachyons": "^4.7.0"
